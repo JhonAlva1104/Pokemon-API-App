@@ -11,11 +11,13 @@ async function bootstrap() {
     forbidNonWhitelisted: true,
     transformOptions: {
 
-      exposeUnsetFields: false
-
-    }
+      exposeUnsetFields: false,
+      enableImplicitConversion: true
+    },
+    transform: true,
   }))
 
   await app.listen(process.env.PORT ?? 3000);
+  console.log(`Aplication running in the port: ${process.env.PORT}`)
 }
 bootstrap();
